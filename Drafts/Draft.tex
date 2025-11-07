@@ -1,10 +1,12 @@
 \documentclass[12pt]{pom_thesis}
 \usepackage[T1]{fontenc}
-\input{commands_packages}
+\usepackage{tikz}
+% \input{commands_packages}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
 \usepackage{mathrsfs}
 \usepackage[euler-digits]{eulervm} 
 \usepackage[font={small}]{caption}
+\usepackage{enumitem}
 \usepackage{float}
 \author{Leo Selker}
 \advisor{Vin de Silva}
@@ -20,7 +22,10 @@
 \DeclareMathOperator{\obj}{ob}
 \DeclareMathOperator{\im}{Im}
 \newcommand{\catname}[1]{\textbf{\textsc{#1}}}
-
+\newcommand{\magn}{\text{Mag}}
+\newcommand{\Nn}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}}
+\newcommand{\Rr}{\mathbb{R}}
 %\theoremstyle{plain}{
 %\newtheorem{thm}{Theorem}[chapter]
 %\newtheorem{lemma}[thm]{Lemma}
@@ -1259,7 +1264,7 @@ A \emph{monoidal category} is an ordinary category $A$, together with
 \item A \emph{unit object} $u \in A$;
 \end{itemize}
 such that
-\begin{enumerate}[(1)]
+\begin{enumerate}
 \item For each ordered triple of objects $x,y,z \in A$, $(x \otimes y) \otimes z \cong x \otimes (y \otimes z)$
 \item For each $x \in A$, $u \otimes x \cong x \cong x \otimes u$,
 \item The function $\otimes$ is \emph{functorial}. This essentially means that if $x_1, x_2, y_1, y_2 \in M, f \in C(x_1, x_2), g \in C(y_1, y_2)$, then there exists a corresponding morphism in $C(x_1 \otimes y_1, x_2 \otimes y_2)$. We call that morphism $f \otimes g$, and require that it behave as we would expect (e.g. if $f,g$ are both isomorphisms, $f \otimes g$ also is).
